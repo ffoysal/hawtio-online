@@ -37,8 +37,8 @@ namespace Online {
 
       const getConnectUrl = function (pod) {
         const container = _.find(pod.spec.containers,
-          container => container.ports.some(port => port.name === 'jolokia'));
-        const port = _.find(container.ports, port => port.name === 'jolokia').containerPort;
+          container => container.ports.some(port => port.name === 'custom-jolokia'));
+        const port = _.find(container.ports, port => port.name === 'custom-jolokia').containerPort;
         return new URI()
           .path('/integration/')
           .query({

@@ -32,8 +32,8 @@ namespace Online {
 
     getConnectUrl(pod: any) {
       const container = _.find(pod.spec.containers,
-        container => container.ports.some(port => port.name === 'jolokia'));
-      const port = _.find(container.ports, port => port.name === 'jolokia').containerPort;
+        container => container.ports.some(port => port.name === 'custom-jolokia'));
+      const port = _.find(container.ports, port => port.name === 'custom-jolokia').containerPort;
       const jolokiaPath = getManagementJolokiaPath(pod, port);
       return new URI()
         .path('/integration/')
