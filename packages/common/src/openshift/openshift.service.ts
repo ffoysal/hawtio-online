@@ -14,7 +14,7 @@ namespace Online {
 
   export class OpenShiftService extends EventEmitter {
 
-    readonly jolokiaPortQuery = '$.spec.containers[*].ports[?(@.name=="jolokia")]';
+    readonly jolokiaPortQuery = '$.spec.containers[*].ports[?(@.name=="telus-jolokia")]';
 
     private _loading = 0;
     private projects: any[] = [];
